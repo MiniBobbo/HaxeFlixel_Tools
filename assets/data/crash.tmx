@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="2017.05.26" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="400" tileheight="150" nextobjectid="4">
+ <tileset firstgid="1" name="crash" tilewidth="400" tileheight="150" tilecount="1" columns="1">
+  <image source="../images/crash.png" width="400" height="150"/>
+ </tileset>
+ <layer name="bg" width="1" height="1">
+  <data encoding="csv">
+1
+</data>
+ </layer>
+ <objectgroup name="walk">
+  <object id="2" x="36" y="136.5">
+   <polyline points="0,0 30.5,0 51,-7 70.5,-23 120,-25 168,-12.5 207.5,-13 262,-29.5 314,-30.5 363,-26.5"/>
+  </object>
+  <object id="3" x="112.5" y="63">
+   <polyline points="0,0 21.5,19.5 7,32.5 30.5,72.5"/>
+  </object>
+ </objectgroup>
+</map>
