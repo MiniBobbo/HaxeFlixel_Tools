@@ -4,9 +4,12 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.math.FlxPoint;
+import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.FlxSpriteUtil;
+import inputhelper.InputHelper;
+import inputhelper.InputHelperMenuState;
 import logs.Logger;
 import tmxtools.TmxTools;
 
@@ -14,11 +17,15 @@ class PlayState extends FlxState
 {
 	var loadedMap:FlxTilemap;
 	var ds:FlxSprite;
+	var text:FlxText;
+	
 	
 	override public function create():Void
 	{
 		super.create();
 		var map = new TmxTools('assets/data/testmap.tmx', 'assets/images/', 'assets/data/');
+		
+		text = new FlxText();
 		
 		loadedMap = map.getMap('Tile Layer 1');
 		//Logger.addLog('MapStats', loadedMap.heightInTiles + '');
@@ -33,7 +40,8 @@ class PlayState extends FlxState
 		}
 		
 		add(ds);
-		
+		add(text);
+		this.openSubState(new InputHelperMenuState());
 	}
 	
 	
@@ -62,6 +70,8 @@ class PlayState extends FlxState
 	
 	override public function update(elapsed:Float):Void
 	{
+		InputHelper.updateKeys(elapsed);
+		text.text = InputHelper.debug();
 		super.update(elapsed);
 	}
 }
