@@ -166,7 +166,7 @@ class InputHelper
 		}
 	}
 	
-	public static function isKeyJustPressed(button:String):Bool {
+	public static function isButtonJustPressed(button:String):Bool {
 		var t:Float = -1;
 		t = isButtonPressedTime(button);
 		
@@ -180,7 +180,7 @@ class InputHelper
 	 * @param	buttonLabel The label of the button to check.  This is case insensitive.
 	 * @return	True if the button is pressed.  Otherwise false.
 	 */
-	public static function isKeyPressed(button:String):Bool {
+	public static function isButtonPressed(button:String):Bool {
 		var t:Float = -1;
 		t = isButtonPressedTime(button);
 		
